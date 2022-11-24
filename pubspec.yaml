@@ -41,6 +41,8 @@ dependencies:
   # Dependencias necesarias
   get: ^4.6.1
   get_storage: ^2.0.3
+  hive: ^2.0.4
+  hive_flutter: ^1.1.0
   line_icons: ^2.0.1
   custom_navigation_bar: ^0.8.2
   google_fonts: ^2.3.1

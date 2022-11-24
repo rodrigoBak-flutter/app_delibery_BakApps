@@ -1,13 +1,12 @@
-import 'package:app_getx_bakapp/src/navigator.dart';
-import 'package:app_getx_bakapp/src/screens/introduction.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:get/get.dart';
-//
-
-
+//Screens
+import 'package:app_getx_bakapp/src/screens/screens.dart';
+//Navigator
+import 'package:app_getx_bakapp/src/navigator.dart';
 
 class SplashController extends GetxController {
-  /// For showing introduction screen just once
+  /// Mostrar la introduccion
   final box = GetStorage();
   bool get showIntro => box.read('showIntro') ?? true;
   void changeBool(bool val) {
@@ -18,12 +17,12 @@ class SplashController extends GetxController {
   @override
   void onInit() {
     Future.delayed(
-      const Duration(seconds: 10),
+      const Duration(seconds: 5),
       () {
         Get.offAll(
             () => showIntro == true
                 ? const IntroductionScreen()
-                :  MainNavigator(),
+                : const MainNavigator(),
             transition: Transition.cupertino);
       },
     );

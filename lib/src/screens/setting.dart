@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 //Controllers
-import '../controllers/splash_controller.dart';
+import '../controllers/controllers.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({Key? key}) : super(key: key);
@@ -13,6 +13,7 @@ class SettingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.find<SplashController>();
+    final controllerTheme = Get.find<AppController>();
     return SafeArea(
       child: Scaffold(
         body: Center(child: SimpleBuilder(builder: (context) {
@@ -38,7 +39,14 @@ class SettingScreen extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-              )
+              ),
+              //MODO OSCURO - Button
+              ElevatedButton(
+                  onPressed: () {
+                    controllerTheme.toggleTheme();
+                    print('Cambio el theme');
+                  },
+                  child: Text('Cambiar tema')),
             ],
           );
         })),
